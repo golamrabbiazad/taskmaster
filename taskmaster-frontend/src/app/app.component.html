@@ -1,0 +1,17 @@
+<nav>
+  <p class="logo">Taskmaster</p>
+  <ul>
+    @if(authService.isLoggedIn()) {
+    <li>
+      <a (click)="logout()" class="nav-link">Logout</a>
+    </li>
+    } @else {
+    <li><a routerLink="/auth/register" class="nav-link">Register</a></li>
+    <li><a routerLink="/auth/login" class="nav-link">Login</a></li>
+    }
+  </ul>
+</nav>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
